@@ -57,7 +57,7 @@ const About = () => {
 
           {/* Resume Download Button */}
           <a
-            href="/Md_Ashraful_Ahsan_Resume.docx"
+            href="/Md_Ashraful_Ahsan_Resume.pdf"
             download="Ahsan-Resume"
             className="inline-flex items-center px-6 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105"
             style={{
