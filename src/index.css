@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* Blob animation */
+@keyframes blob {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.2);
+  }
+  66% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Add animation to .animate-blob */
+.animate-blob {
+  animation: blob 10s infinite;
+}
+
+/* Customize tailwind theme (you can add more styles if necessary) */
+.bg-purple-500 {
+  background-color: #9b4de3;
+}
+.blur-3xl {
+  filter: blur(20px);
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+
+
+
+@layer utilities {
+    .clip-path-custom {
+      clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 95%, 0 100%);
+    }
+    .clip-path-custom-2 {
+        clip-path: polygon(0 0, 100% 0, 100% 98%, 25% 95%, 0 100%);
+      }
+    .clip-path-custom-3 {
+        clip-path: polygon(0 0, 100% 0, 100% 98%, 75% 96%, 0 100%);
+      }
+  }
