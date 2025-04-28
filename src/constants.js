@@ -43,8 +43,8 @@ import bsaLogo from "./assets/education_logo/college-logo.jpeg";
 import vpsLogo from './assets/education_logo/school-logo.jpg';
 import primary from "./assets/education_logo/primary.png";
 // Project Section Logo's
-import githubdetLogo from "./assets/work_logo/ecommerce-project.PNG";
-
+import githubdetLogo from "./assets/work_logo/ecommerce-project.jpg";
+import project2 from "./assets/work_logo/project2.jpg";
 
 
 export const SkillsInfo = [
@@ -217,27 +217,27 @@ export const SkillsInfo = [
       ],
       github:
         "https://github.com/Ashraful-Ahsan/ecommerce-project-by-laravel-ashraful",
-        webapp: "#",
+      webapp: "#",
     },
     {
       id: 1,
-      title: "Laravel eCommerce Project",
+      title: "MERN eCommerce Project",
       description:
-        "A user-friendly eCommerce website developed with Laravel, featuring secure user registration and login system using Laravel Auth. The project includes dynamic product management, category listings, shopping cart functionality, and order placement. Designed with clean Blade templates and a responsive interface to ensure a seamless and intuitive shopping experience.",
-      image: githubdetLogo,
+        "A full-stack eCommerce website built with the MERN stack (MongoDB, Express.js, React, and Node.js). Features include user authentication with JWT, product management, shopping cart, order processing, and secure payment integration. The project offers a responsive UI, admin dashboard for managing products and orders, and a seamless shopping experience.",
+      image: project2,
       tags: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Laravel",
-        "Laravel API",
-        "Auth",
-        "Blade",
-        "Bootstrap",
+        "MongoDB",
+        "Express.js",
+        "React",
+        "Node.js",
+        "JWT Auth",
+        "REST API",
+        "Tailwind CSS",
+        "Redux",
       ],
       github:
-        "https://github.com/Ashraful-Ahsan/ecommerce-project-by-laravel-ashraful",
-        webapp: "#",
+        "https://github.com/Ashraful-Ahsan/ecommerce-site-by-react-greencart",
+      webapp: "https://ecommerce-site-by-mern-rm3q.vercel.app/",
     },
     {
       id: 2,
@@ -257,7 +257,6 @@ export const SkillsInfo = [
       ],
       github:
         "https://github.com/Ashraful-Ahsan/ecommerce-project-by-laravel-ashraful",
-        webapp: "#",
+      webapp: "#",
     },
-    
   ];  

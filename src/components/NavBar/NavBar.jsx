@@ -31,10 +31,10 @@ const Navbar = () => {
   const menuItems = [
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
-    { id: "experience", label: "Experience" },
+    { id: "services", label: "Services" },
     { id: "projects", label: "Projects" },
     { id: "education", label: "Education" },
-    { id: "contact", label:"Contact"}
+    { id: "contact", label: "Contact" },
   ];
 
   return (
@@ -47,7 +47,10 @@ const Navbar = () => {
     >
       <div className="text-white py-5 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-lg font-semibold cursor-pointer">
+        <div
+          onClick={() => handleMenuItemClick("about")} // Added onClick event here
+          className="text-lg font-semibold cursor-pointer"
+        >
           <span className="text-[#8245ec]">&lt;</span>
           <span className="text-white">Ahsan</span>
           <span className="text-[#8245ec]">/</span>

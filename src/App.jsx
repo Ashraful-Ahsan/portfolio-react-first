@@ -8,6 +8,7 @@ import Contact from "./components/Contact/Contact"
 import Footer from "./components/Footer/Footer"
 import Education from "./components/Education/Education"
 import BlurBlob from "./BlurBlob"
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton"
 
 
 
@@ -35,6 +36,7 @@ function App() {
           <Contact />
           <Footer />
         </div>
+        <ScrollToTopButton />
       </div>
     </>
   );
