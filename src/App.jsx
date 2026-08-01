@@ -1,4 +1,5 @@
 import React from "react"
+import { Analytics } from '@vercel/analytics/react'
 import NavBar from "./components/NavBar/NavBar"
 import About from "./components/About/About"
 import Skills from "./components/Skills/Skills"
@@ -38,6 +39,7 @@ function App() {
         </div>
         <ScrollToTopButton />
       </div>
+      <Analytics />
     </>
   );
 }
