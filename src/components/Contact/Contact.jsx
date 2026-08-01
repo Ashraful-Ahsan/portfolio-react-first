@@ -73,11 +73,11 @@ const Contact = () => {
           <div className="mt-6 space-y-4 text-sm text-slate-300">
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-purple-500/10 p-2 text-purple-300"><FaEnvelope /></div>
-              <span>ashrafulahsan.dev@gmail.com</span>
+              <span>ahsanxp72@gmail.com</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-purple-500/10 p-2 text-purple-300"><FaPhoneAlt /></div>
-              <span>+880 1700-000000</span>
+              <span>+880 1974547308</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="rounded-full bg-purple-500/10 p-2 text-purple-300"><FaMapMarkerAlt /></div>
