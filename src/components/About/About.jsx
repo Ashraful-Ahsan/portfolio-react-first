@@ -1,92 +1,81 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import { FaDownload } from "react-icons/fa6";
+import { FaDownload, FaCode, FaServer, FaRocket } from "react-icons/fa6";
 import Tilt from "react-parallax-tilt";
 import aboutImg from "../../assets/profile.png";
 
 const About = () => {
-  return (
-    <section
-      id="about"
-      className="py-12 px-[7vw] md:px-[7vw] lg:px-[20vw] font-sans mt-16 md:mt-24 lg:mt-32"
-    >
-      <div className="flex flex-col-reverse md:flex-row justify-between items-center">
-        {/* Left Side */}
-        <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
-          {/* Greeting */}
-          <h1 className="text-3xl text-white sm:text-4xl md:text-5xl font-bold  mb-2 leading-tight">
-            Hi, I&apos;m
-          </h1>
+  const highlights = [
+    { icon: <FaCode className="text-[#8245ec]" />, title: "Frontend", text: "React, Tailwind, modern UI systems" },
+    { icon: <FaServer className="text-[#8245ec]" />, title: "Backend", text: "Laravel, APIs, databases, authentication" },
+    { icon: <FaRocket className="text-[#8245ec]" />, title: "Delivery", text: "Fast, responsive, maintainable applications" },
+  ];
 
-          {/* Name */}
-          <h2 className="text-4xl text-white sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
-            MD. ASHRAFUL AHSAN
+  return (
+    <section id="about" className="px-[7vw] py-16 md:px-[7vw] md:py-24 lg:px-[20vw] lg:py-28">
+      <div className="flex flex-col-reverse items-center justify-between gap-12 lg:flex-row">
+        <div className="w-full text-center md:text-left lg:w-[55%]">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-purple-300">Full-Stack Developer</p>
+          <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+            Hi, I&apos;m <span className="text-transparent bg-gradient-to-r from-purple-400 to-fuchsia-300 bg-clip-text">Ahsan</span>
+          </h1>
+          <h2 className="mt-3 text-2xl font-semibold text-slate-300 sm:text-3xl">
+            Building polished web experiences with
+            <span className="ml-2 text-[#dbff59]">
+              <TypeAnimation
+                sequence={[
+                  "React",
+                  1800,
+                  "Laravel",
+                  1800,
+                  "REST APIs",
+                  1800,
+                  "Modern UI",
+                  1800,
+                ]}
+                speed={45}
+                repeat={Infinity}
+                cursor={true}
+              />
+            </span>
           </h2>
 
-          {/* Skills Typing Effect */}
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-[#8245ec] leading-tight">
-            <span className="text-[#dbff59]">I am </span>
-            <TypeAnimation
-              sequence={[
-                "Fullstack Web Developer",
-                2000,
-                "API Developer (PHP & Laravel)",
-                2000,
-                "React Developer (SPA)",
-                2000,
-                "JavaScript Coder",
-                2000,
-              ]}
-              speed={50}
-              repeat={Infinity}
-              cursor={true}
-              className="inline-block ml-2"
-            />
-          </h3>
-
-          {/* About Paragraph */}
-          <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-8 mt-6 leading-relaxed text-justify">
-            I&apos;m a passionate Full-Stack Developer skilled in modern web
-            application development. I specialize in RESTful APIs with PHP
-            Laravel, responsive single-page applications using React, and clean
-            JavaScript coding. Focused on creating user-friendly, meaningful
-            digital experiences, I'm driven by creativity, curiosity, and
-            continuous learning — building simple, precise, and impactful
-            solutions.
+          <p className="mt-6 text-base leading-8 text-slate-400 sm:text-lg">
+            I create thoughtful, user-friendly digital products that combine clean design, strong architecture, and smooth performance. From scalable APIs to elegant single-page applications, I focus on delivering practical solutions that feel effortless to use.
           </p>
 
-          {/* Resume Download Button */}
-          <a
-            href="/Md_Ashraful_Ahsan_Resume.pdf"
-            download="Ahsan-Resume"
-            className="inline-flex items-center px-6 py-3 rounded-full text-lg font-semibold transition duration-300 transform hover:scale-105"
-            style={{
-              background: "linear-gradient(90deg, #8245ec, #a855f7)",
-              color: "#fff",
-              boxShadow: "0 0 5px #8245ec, 0 0 10px #8245ec, 0 0 20px #8245ec",
-            }}
-          >
-            <FaDownload className="mr-3" />
-            Download Resume
-          </a>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:justify-start">
+            <a href="#projects" className="btn-primary">
+              Explore My Work
+            </a>
+            <a href="/Md_Ashraful_Ahsan_Resume.pdf" download="Ahsan-Resume" className="btn-secondary">
+              <FaDownload className="mr-2" />
+              Download Resume
+            </a>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {highlights.map((item) => (
+              <div key={item.title} className="glass-card rounded-2xl p-4 text-left">
+                <div className="mb-3 inline-flex rounded-full bg-purple-500/10 p-2">{item.icon}</div>
+                <h3 className="text-base font-semibold text-white">{item.title}</h3>
+                <p className="mt-1 text-sm text-slate-400">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Right Side */}
-        <div className="md:w-1/2 flex justify-center md:justify-end">
+        <div className="flex w-full justify-center lg:w-[45%] lg:justify-end">
           <Tilt
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-[28rem] md:h-[28rem] border-4 border-purple-700 rounded-full"
-            tiltMaxAngleX={20}
-            tiltMaxAngleY={20}
+            className="w-56 h-56 rounded-full border-4 border-purple-500/70 shadow-[0_0_80px_rgba(130,69,236,0.35)] sm:w-72 sm:h-72 md:w-80 md:h-80"
+            tiltMaxAngleX={18}
+            tiltMaxAngleY={18}
             perspective={1000}
-            scale={1.05}
+            scale={1.03}
             transitionSpeed={1000}
             gyroscope={true}
           >
-            <img
-              src={aboutImg}
-              alt="Ahsan"
-              className="w-full h-full rounded-full object-cover drop-shadow-[0_10px_20px_rgba(130,69,236,0.5)]"
-            />
+            <img src={aboutImg} alt="Ahsan" className="h-full w-full rounded-full object-cover" />
           </Tilt>
         </div>
       </div>

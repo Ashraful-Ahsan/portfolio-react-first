@@ -1,83 +1,42 @@
 import React from "react";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-  FaInstagram,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  // Smooth scroll function
-  const handleScroll = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <footer className="bg-gray-100 text-gray-800 py-8 px-[12vw] md:px-[7vw] lg:px-[20vw]">
-      <div className="container mx-auto text-center">
-        {/* Name / Logo */}
-        <h2 className="text-xl font-semibold text-purple-600">
-          MD. ASHRAFUL AHSAN
-        </h2>
+    <footer className="border-t border-white/10 bg-[#050414]/80 px-[7vw] py-10 md:px-[7vw] lg:px-[20vw]">
+      <div className="mx-auto flex flex-col items-center text-center">
+        <h2 className="text-xl font-semibold text-white">MD. ASHRAFUL AHSAN</h2>
+        <p className="mt-2 text-sm text-slate-400">Designing and building web experiences with care and intention.</p>
 
-        {/* Navigation Links */}
-        <nav className="flex flex-wrap justify-center space-x-4 sm:space-x-6 mt-4">
+        <nav className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-slate-300">
           {[
-            { name: "About", id: "about" },
-            { name: "Skills", id: "skills" },
-            { name: "Services", id: "services" },
-            { name: "Projects", id: "projects" },
-            { name: "Education", id: "education" },
-            { name: "Contact", id: "contact" },
-          ].map((item, index) => (
-            <button
-              key={index}
-              onClick={() => handleScroll(item.id)}
-              className="hover:text-purple-600 text-sm sm:text-base my-1"
-            >
+            { name: "Home", path: "/" },
+            { name: "Projects", path: "/projects" },
+            { name: "Free Tools", path: "/free-tools" },
+            { name: "Contact", path: "/contact" },
+          ].map((item) => (
+            <Link key={item.path} to={item.path} className="transition hover:text-purple-400">
               {item.name}
-            </button>
+            </Link>
           ))}
         </nav>
 
-        {/* Social Media Icons */}
-        <div className="flex flex-wrap justify-center space-x-4 mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           {[
             { icon: <FaFacebook />, link: "https://www.facebook.com/ahsanpx/" },
             { icon: <FaTwitter />, link: "https://x.com/ahsanxt" },
-            {
-              icon: <FaLinkedin />,
-              link: "https://www.linkedin.com/in/md-ashraful-ahsan-902975200/",
-            },
-            {
-              icon: <FaInstagram />,
-              link: "https://www.instagram.com/ahsanxt/?next=%2F",
-            },
-            {
-              icon: <FaYoutube />,
-              link: "https://www.youtube.com/@TottoTalash",
-            },
+            { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/md-ashraful-ahsan-902975200/" },
+            { icon: <FaInstagram />, link: "https://www.instagram.com/ahsanxt/?next=%2F" },
+            { icon: <FaYoutube />, link: "https://www.youtube.com/@TottoTalash" },
           ].map((item, index) => (
-            <a
-              key={index}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xl text-gray-700 hover:text-purple-600 transition-transform transform hover:scale-110"
-            >
+            <a key={`${item.link}-${index}`} href={item.link} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/5 p-3 text-lg text-slate-300 transition hover:-translate-y-1 hover:border-purple-500/40 hover:text-purple-300">
               {item.icon}
             </a>
           ))}
         </div>
 
-        {/* Copyright */}
-        <p className="text-sm text-gray-500 mt-6">
-          © 2025 MD. ASHRAFUL AHSAN. All rights reserved.
-        </p>
+        <p className="mt-8 text-sm text-slate-500">© 2026 MD. ASHRAFUL AHSAN. All rights reserved.</p>
       </div>
     </footer>
   );
