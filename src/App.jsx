@@ -1,17 +1,14 @@
-import React from "react"
-import { Routes, Route } from "react-router-dom"
-import NavBar from "./components/NavBar/NavBar"
-import Footer from "./components/Footer/Footer"
-import BlurBlob from "./BlurBlob"
-import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton"
-import HomePage from "./pages/HomePage"
-import ProjectsPage from "./pages/ProjectsPage"
-import ContactPage from "./pages/ContactPage"
-import FreeToolsPage from "./pages/FreeToolsPage"
-
-
-
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+import BlurBlob from "./BlurBlob";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
+import HomePage from "./pages/HomePage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ContactPage from "./pages/ContactPage";
+import FreeToolsPage from "./pages/FreeToolsPage";
+import ToolDetailPage from "./pages/ToolDetailPage"; // Import the detail component
 
 function App() {
   return (
@@ -28,6 +25,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/free-tools" element={<FreeToolsPage />} />
+          <Route path="/free-tools/:toolId" element={<ToolDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
@@ -38,4 +36,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

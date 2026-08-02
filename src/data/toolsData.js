@@ -1,0 +1,17 @@
+export const TOOLS = [
+  { id: "resume", title: "AI Resume / CV Maker", description: "Build a polished resume structure, preview it instantly, and export a downloadable PDF.", badge: "New" },
+  { id: "background-remover", title: "Background Remover", description: "Remove a solid background from an image and export a transparent result.", badge: "Advanced" },
+  { id: "image-compressor", title: "Image Compressor", description: "Resize and compress images while keeping them web-ready and lightweight.", badge: "Advanced" },
+  { id: "gradient-generator", title: "Gradient Generator", description: "Design beautiful CSS gradients with instant preview and copyable output.", badge: "Design" },
+  { id: "shadow-generator", title: "Box Shadow Generator", description: "Generate modern shadow styling for cards, buttons, and panels.", badge: "Design" },
+  { id: "flexbox-playground", title: "Flexbox Playground", description: "Experiment with flex layouts in real time without leaving the page.", badge: "Layout" },
+  { id: "jwt-decoder", title: "JWT Decoder", description: "Decode JWT headers and payloads instantly for debugging and inspection.", badge: "Developer" },
+  { id: "regex-tester", title: "Regex Tester", description: "Test and debug complex regular expressions with live match results.", badge: "Developer" },
+  { id: "word-counter", title: "Word Counter", description: "Measure words, characters, and reading density in one place.", badge: "Content" },
+  { id: "image-cropper", title: "Image Cropper", description: "Crop images into a focused composition and export them quickly.", badge: "Advanced" },
+  { id: "qr-generator", title: "QR Code Generator", description: "Generate QR codes instantly for links, text, or contact details.", badge: "Live" },
+  { id: "password-generator", title: "Password Generator", description: "Create high-strength passwords in one click with a strength hint.", badge: "Live" },
+  { id: "json-formatter", title: "JSON Formatter", description: "Format and validate JSON structures with clear status feedback.", badge: "Live" },
+  { id: "markdown-preview", title: "Markdown Preview", description: "Preview markdown content as you write with proper formatting.", badge: "Live" },
+  { id: "todo", title: "Todo App", description: "Manage projects and tasks with persistent local storage and completion states.", badge: "Live" },
+];

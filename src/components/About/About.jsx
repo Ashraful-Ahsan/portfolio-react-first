@@ -1,16 +1,10 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import { FaDownload, FaCode, FaServer, FaRocket } from "react-icons/fa6";
+import { FaDownload } from "react-icons/fa6";
 import Tilt from "react-parallax-tilt";
 import aboutImg from "../../assets/profile.png";
 
 const About = () => {
-  const highlights = [
-    { icon: <FaCode className="text-[#8245ec]" />, title: "Frontend", text: "React, Tailwind, modern UI systems" },
-    { icon: <FaServer className="text-[#8245ec]" />, title: "Backend", text: "Laravel, APIs, databases, authentication" },
-    { icon: <FaRocket className="text-[#8245ec]" />, title: "Delivery", text: "Fast, responsive, maintainable applications" },
-  ];
-
   return (
     <section id="about" className="px-[7vw] py-16 md:px-[7vw] md:py-24 lg:px-[20vw] lg:py-28">
       <div className="flex flex-col-reverse items-center justify-between gap-12 lg:flex-row">
@@ -52,16 +46,6 @@ const About = () => {
               <FaDownload className="mr-2" />
               Download Resume
             </a>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {highlights.map((item) => (
-              <div key={item.title} className="glass-card rounded-2xl p-4 text-left">
-                <div className="mb-3 inline-flex rounded-full bg-purple-500/10 p-2">{item.icon}</div>
-                <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                <p className="mt-1 text-sm text-slate-400">{item.text}</p>
-              </div>
-            ))}
           </div>
         </div>
 
