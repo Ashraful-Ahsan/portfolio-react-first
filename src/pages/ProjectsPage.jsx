@@ -50,51 +50,77 @@ const ProjectsPage = () => {
       </div>
 
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4">
-          <div className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-slate-900 shadow-2xl">
-            <div className="flex justify-end p-4">
-              <button 
-                onClick={handleCloseModal} 
-                className="rounded-full border border-white/10 bg-white/5 p-2 text-3xl text-white transition hover:text-purple-400"
-              >
-                &times;
-              </button>
-            </div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-6">
+          
+          {/* Outer relative container allows the mobile close button to hang safely outside the scrolling area */}
+          <div className="relative w-full max-w-3xl">
+            
+            {/* Mobile Close Button: Hangs outside top right corner */}
+            <button 
+              onClick={handleCloseModal} 
+              className="md:hidden absolute -top-4 -right-4 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-slate-800 text-3xl text-white shadow-2xl"
+            >
+              &times;
+            </button>
 
-            <div className="flex flex-col px-4 pb-6 sm:px-8">
-              <img 
-                src={selectedProject.image} 
-                alt={selectedProject.title} 
-                className="w-full rounded-2xl object-contain" 
-              />
-              <div className="mt-6">
-                <h3 className="text-2xl font-semibold text-white">{selectedProject.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-slate-400 sm:text-base">{selectedProject.description}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {selectedProject.tags.map((tag, index) => (
-                    <span key={`${selectedProject.title}-${index}`} className="tag-pill">
-                      {tag}
-                    </span>
-                  ))}
+            {/* Inner container handles vertical scrolling (overflow-y-auto) for small phones */}
+            <div className="w-full max-h-[85vh] overflow-y-auto overflow-x-hidden rounded-3xl border border-white/10 bg-slate-900 shadow-2xl flex flex-col">
+              
+              {/* PC/Tablet Close Button */}
+              <div className="hidden md:flex justify-end p-4 pb-0">
+                <button 
+                  onClick={handleCloseModal} 
+                  className="rounded-full border border-white/10 bg-white/5 p-2 text-3xl text-white transition hover:text-purple-400"
+                >
+                  &times;
+                </button>
+              </div>
+
+              <div className="flex flex-col p-5 sm:px-8 sm:pb-8 pt-5 md:pt-4">
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title} 
+                  className="w-full max-h-[40vh] sm:max-h-[50vh] rounded-2xl object-contain mx-auto" 
+                />
+                
+                {/* Description & Action Buttons: Now visible on ALL devices */}
+                <div className="mt-6 block">
+                  <h3 className="text-2xl font-semibold text-white">{selectedProject.title}</h3>
+                  
+                  {/* Shows 3 lines of description max on mobile, full text on PC */}
+                  <p className="mt-4 text-sm leading-6 text-slate-400 sm:text-base sm:leading-7 line-clamp-3 md:line-clamp-none">
+                    {selectedProject.description}
+                  </p>
+                  
+                  {/* Coding Languages (Tags) block */}
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {selectedProject.tags.map((tag, index) => (
+                      <span key={`${selectedProject.title}-${index}`} className="tag-pill">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <a 
+                      href={selectedProject.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="btn-secondary w-full justify-center"
+                    >
+                      View Code
+                    </a>
+                    <a 
+                      href={selectedProject.webapp} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="btn-primary w-full justify-center"
+                    >
+                      View Live
+                    </a>
+                  </div>
                 </div>
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a 
-                    href={selectedProject.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="btn-secondary w-full justify-center"
-                  >
-                    View Code
-                  </a>
-                  <a 
-                    href={selectedProject.webapp} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="btn-primary w-full justify-center"
-                  >
-                    View Live
-                  </a>
-                </div>
+
               </div>
             </div>
           </div>
